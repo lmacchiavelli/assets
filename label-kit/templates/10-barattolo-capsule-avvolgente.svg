@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Label Kit — Barattolo capsule — avvolgente — misura finita 170 × 80 mm, abbondanza 3.0 mm per lato, area sicura 3.0 mm.
+     Livelli (gruppi di primo livello): GRAFICA, TESTI, SIMBOLI, AREA_SICURA, FUSTELLA, ABBONDANZA, CROCINI, NOTE.
+     Prima di esportare: nascondi AREA_SICURA, ABBONDANZA, NOTE; FUSTELLA su colore spot "CutContour" o nascosta (chiedi alla tipografia). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="176.00mm" height="86.00mm" viewBox="0 0 176.00 86.00">
+<title>Barattolo capsule — avvolgente</title>
+<g id="GRAFICA" data-name="GRAFICA - sfondo, pattern, illustrazioni">
+<rect x="0" y="0" width="176.00" height="86.00" fill="#f4efe6"/>
+<rect x="6.00" y="6.00" width="164.00" height="74.00" fill="none" stroke="#1f6f5b" stroke-width="0.4" rx="1"/>
+</g>
+<g id="TESTI" data-name="TESTI - nome, claim, INCI, avvertenze">
+<text x="45.50" y="28.60" text-anchor="middle" font-family="Helvetica, Arial" font-size="3.2" letter-spacing="0.6" fill="#1f6f5b">NOME BRAND</text>
+<text x="45.50" y="44.50" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#1b1a17">Nome Prodotto</text>
+<text x="45.50" y="55.80" text-anchor="middle" font-family="Helvetica, Arial" font-size="2.6" fill="#6b665c">claim breve · funzione</text>
+<text x="45.50" y="78.50" text-anchor="middle" font-family="Helvetica, Arial" font-size="2.6" fill="#1b1a17">50 ml ℮</text>
+<text x="93.00" y="11.00" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">INGREDIENTI / INCI: Aqua, Glycerin, ... (min. 1,2 mm x-height consigliata)</text>
+<text x="93.00" y="14.20" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">MODO D'USO: ...</text>
+<text x="93.00" y="17.40" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">AVVERTENZE: ...</text>
+<text x="93.00" y="20.60" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">Responsabile immissione sul mercato: Nome, Indirizzo, Città (IT)</text>
+<text x="93.00" y="23.80" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">Lotto: vedi fondo · Made in Italy</text>
+<rect x="93.00" y="27.00" width="72.00" height="43.00" fill="none" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.5 0.5"/>
+<text x="94.00" y="29.50" font-family="Helvetica, Arial" font-size="1.5" fill="#9e9e9e">area testi aggiuntivi / codice a barre</text>
+</g>
+<g id="SIMBOLI" data-name="SIMBOLI OBBLIGATORI - incolla da cartella simboli">
+<rect x="151.00" y="74.00" width="4" height="4" rx="0.5" fill="none" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.4 0.4"/>
+<text x="153.00" y="76.80" text-anchor="middle" font-family="Helvetica, Arial" font-size="1.6" fill="#9e9e9e">PAO</text>
+<rect x="155.60" y="74.00" width="4" height="4" rx="0.5" fill="none" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.4 0.4"/>
+<text x="157.60" y="76.80" text-anchor="middle" font-family="Helvetica, Arial" font-size="1.6" fill="#9e9e9e">℮</text>
+<rect x="160.20" y="74.00" width="4" height="4" rx="0.5" fill="none" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.4 0.4"/>
+<text x="162.20" y="76.80" text-anchor="middle" font-family="Helvetica, Arial" font-size="1.6" fill="#9e9e9e">♻</text>
+</g>
+<g id="ABBONDANZA" data-name="ABBONDANZA (3 mm) - non stampare">
+<rect x="0" y="0" width="176.00" height="86.00" fill="none" stroke="#ff00ff" stroke-width="0.15" stroke-dasharray="1 1"/>
+</g>
+<g id="FUSTELLA" data-name="FUSTELLA - linea di taglio">
+<rect x="3.00" y="3.00" width="170.00" height="80.00" rx="2" fill="none" stroke="#00a0e9" stroke-width="0.2"/>
+</g>
+<g id="AREA_SICURA" data-name="AREA SICURA (3 mm dal taglio) - tieni dentro i testi">
+<rect x="6.00" y="6.00" width="164.00" height="74.00" fill="none" stroke="#00c853" stroke-width="0.15" stroke-dasharray="2 1"/>
+<rect x="168.00" y="3.00" width="5" height="80.00" fill="#ff9800" fill-opacity="0.15" stroke="none"/>
+<text x="170.50" y="43.00" font-family="Helvetica, Arial" font-size="2" fill="#ff9800" text-anchor="middle" transform="rotate(-90 170.50 43.00)">SOVRAPPOSIZIONE 5 mm</text>
+<line x1="88.00" y1="3.00" x2="88.00" y2="83.00" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.5 0.5"/>
+<text x="45.50" y="5.50" font-family="Helvetica, Arial" font-size="1.8" fill="#9e9e9e" text-anchor="middle">FRONTE</text>
+<text x="130.50" y="5.50" font-family="Helvetica, Arial" font-size="1.8" fill="#9e9e9e" text-anchor="middle">RETRO</text>
+</g>
+<g id="CROCINI" data-name="CROCINI DI TAGLIO"><line x1="2.00" y1="3.00" x2="-1.00" y2="3.00" stroke="#000" stroke-width="0.1"/><line x1="3.00" y1="2.00" x2="3.00" y2="-1.00" stroke="#000" stroke-width="0.1"/><line x1="174.00" y1="3.00" x2="177.00" y2="3.00" stroke="#000" stroke-width="0.1"/><line x1="173.00" y1="2.00" x2="173.00" y2="-1.00" stroke="#000" stroke-width="0.1"/><line x1="2.00" y1="83.00" x2="-1.00" y2="83.00" stroke="#000" stroke-width="0.1"/><line x1="3.00" y1="84.00" x2="3.00" y2="87.00" stroke="#000" stroke-width="0.1"/><line x1="174.00" y1="83.00" x2="177.00" y2="83.00" stroke="#000" stroke-width="0.1"/><line x1="173.00" y1="84.00" x2="173.00" y2="87.00" stroke="#000" stroke-width="0.1"/></g>
+<g id="NOTE" data-name="NOTE PER IL DESIGNER - non stampare">
+<text x="3.00" y="86.00" font-family="Helvetica, Arial" font-size="1.6" fill="#9e9e9e" transform="translate(0,-0.6)">Barattolo capsule — avvolgente · 170×80 mm · Barattolo 100–150 cc · magenta = abbondanza · ciano = taglio · verde = area sicura</text>
+</g>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PAO — Period After Opening (Reg. CE 1223/2009, All. VII). Cambia 12M con i mesi reali: 6M, 12M, 24M, 36M -->
+<svg xmlns="http://www.w3.org/2000/svg" width="11mm" height="12mm" viewBox="0 0 11 12"><title>PAO — Period After Opening (Reg. CE 1223/2009, All. VII). Cambia 12M con i mesi reali: 6M, 12M, 24M, 36M</title>
+<g fill="none" stroke="#000" stroke-width="0.45" stroke-linejoin="round" stroke-linecap="round">
+<path d="M2.2 4.2 H8.8 V10.6 a0.8 0.8 0 0 1 -0.8 0.8 H3 a0.8 0.8 0 0 1 -0.8 -0.8 Z"/>
+<path d="M2.6 2.3 a0.6 0.6 0 0 1 0.6 -0.6 h4.6 a0.6 0.6 0 0 1 0.6 0.6 v0.9 H2.6 Z" transform="rotate(-18 5.5 2.6) translate(0.2,-0.3)"/>
+</g>
+<text x="5.5" y="8.6" text-anchor="middle" font-family="Helvetica, Arial" font-weight="700" font-size="3.2" fill="#000">12M</text>
+</svg>

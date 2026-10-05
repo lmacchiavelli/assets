@@ -1,0 +1,64 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>Guida esportazione per tipografia</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Guida: dal template al file che la tipografia accetta al primo colpo</h1>
+<p class="lead">Label Kit · 12 template etichette · Illustrator CC 2020 o superiore (funziona anche con Affinity Designer e Inkscape)</p>
+
+<h2>1. Aprire il template</h2>
+<ol>
+<li>Apri il file <span class="kbd">.svg</span> con <strong>File › Apri</strong> (non "Inserisci"). Illustrator converte i gruppi di primo livello in livelli.</li>
+<li>Se vedi un solo livello, apri il pannello Livelli, seleziona il gruppo e usa <strong>Rilascia in livelli (sequenza)</strong>. Oppure lavora direttamente nei gruppi: sono già nominati.</li>
+<li>Controlla subito <strong>File › Imposta documento</strong>: unità in millimetri, modalità colore <strong>CMYK</strong> (Effetto › Modalità colore documento › CMYK).</li>
+</ol>
+<div class="box">Ogni template ha misura finita + 3 mm di abbondanza per lato. Il tavolo da disegno è già della misura giusta, <strong>non ridimensionarlo</strong>.</div>
+
+<h2>2. I livelli e a cosa servono</h2>
+<table><tr><th>Livello</th><th>Colore</th><th>Cosa contiene</th><th>In stampa?</th></tr>
+<tr><td>GRAFICA</td><td>—</td><td>Sfondo, pattern, illustrazioni, logo. Tutto ciò che è colore deve arrivare fino al bordo esterno (magenta).</td><td>Sì</td></tr>
+<tr><td>TESTI</td><td>—</td><td>Nome, claim, INCI, avvertenze, quantità. Resta dentro la linea verde.</td><td>Sì</td></tr>
+<tr><td>SIMBOLI</td><td>—</td><td>Segnaposto per PAO, ℮, riciclo. Incolla i file dalla cartella <span class="kbd">simboli/</span>.</td><td>Sì</td></tr>
+<tr><td>AREA_SICURA</td><td>verde tratteggio</td><td>3 mm dal taglio. Niente testo fuori.</td><td>No: nascondi</td></tr>
+<tr><td>FUSTELLA</td><td>ciano</td><td>Linea di taglio. Alcune tipografie la vogliono come tinta piatta "CutContour" in sovrastampa, altre la vogliono tolta. <strong>Chiedi.</strong></td><td>Dipende</td></tr>
+<tr><td>ABBONDANZA</td><td>magenta tratteggio</td><td>Bordo esterno 3 mm. Solo riferimento.</td><td>No: nascondi</td></tr>
+<tr><td>CROCINI</td><td>nero</td><td>Crocini di taglio. Se esporti con "Indicatori di taglio" di Illustrator, nascondi questi.</td><td>Uno dei due</td></tr>
+<tr><td>NOTE</td><td>grigio</td><td>Promemoria per te.</td><td>No: nascondi</td></tr></table>
+
+<h2>3. Le 7 regole che evitano il rimando della tipografia</h2>
+<ol>
+<li><strong>Abbondanza 3 mm.</strong> Gli sfondi devono uscire fino alla linea magenta. Un bordo bianco sottile dopo il taglio è il difetto più comune.</li>
+<li><strong>Area sicura 3 mm.</strong> Testi e loghi dentro la linea verde. La fustella può spostarsi di 1 mm: il margine è per quello.</li>
+<li><strong>CMYK, non RGB.</strong> Verde brillante e arancio acceso in RGB diventano spenti in CMYK. Lavora in CMYK da subito e non ti sorprendi.</li>
+<li><strong>Nero ricco solo per i fondi.</strong> Fondo nero: C60 M40 Y40 K100. Testo nero: K100 puro. Mai testo piccolo in nero ricco (registro).</li>
+<li><strong>Testi piccoli: minimo 1,2 mm di altezza della x</strong> (circa corpo 5–6 pt). Sotto, l'INCI non è leggibile e il regolamento chiede "leggibile e indelebile". Per alimenti/integratori 1,2 mm è un obbligo (Reg. 1169/2011).</li>
+<li><strong>Converti i testi in tracciati</strong> solo nella copia che mandi in stampa (Testo › Crea contorno). Tieni il file con i testi vivi.</li>
+<li><strong>Immagini a 300 dpi</strong> alla dimensione reale, incorporate (Finestra › Collegamenti › Incorpora). Nessun PNG da Instagram a 72 dpi.</li>
+</ol>
+
+<h2>4. Esportare il PDF</h2>
+<ol>
+<li>Nascondi AREA_SICURA, ABBONDANZA, NOTE. Decidi FUSTELLA e CROCINI (vedi tabella).</li>
+<li><strong>File › Salva con nome › Adobe PDF</strong>. Predefinito: <strong>[PDF/X-4:2008]</strong> (o PDF/X-1a se la tipografia è vecchia scuola e chiede solo quello).</li>
+<li>Sezione <strong>Indicatori e pagine al vivo</strong>: pagine al vivo <strong>3 mm</strong> su tutti i lati. Indicatori di taglio: sì, se hai nascosto il livello CROCINI.</li>
+<li>Sezione <strong>Output</strong>: conversione colore "Converti in destinazione (mantieni i valori)", profilo <strong>Coated FOGRA39</strong> per etichette su carta patinata o PP; <strong>Uncoated FOGRA29</strong> per carta naturale.</li>
+<li>Salva come <span class="kbd">nomebrand_prodotto_formato_vSTAMPA.pdf</span>. Apri il PDF e controlla a 400 % i bordi e i testi piccoli.</li>
+</ol>
+<div class="box warn"><strong>Tinte piatte e bianco coprente.</strong> Per etichette trasparenti o metallizzate serve un livello di bianco (tinta piatta "White" in sovrastampa). Per oro/argento a caldo, una tinta piatta "Foil". Chiedi alla tipografia come vogliono nominarli prima di impostarli.</div>
+
+<h2>5. Cosa mandare alla tipografia</h2>
+<ul class="check">
+<li>PDF/X con abbondanze</li>
+<li>Quantità, materiale (PP bianco, carta naturale, PP trasparente, ecc.), finitura (opaco, lucido, soft touch)</li>
+<li>Formato finito in mm e forma (rettangolare con angoli raggio 2 mm, tonda Ø 60, ecc.)</li>
+<li>Se è una fascia avvolgente: diametro del contenitore e senso di avvolgimento</li>
+<li>In rotolo o in fogli? Se in rotolo per etichettatrice: diametro anima e orientamento</li>
+<li>Chiedi sempre una <strong>prova colore</strong> o almeno un PDF di controllo prima della tiratura</li>
+</ul>
+
+<h2>6. Materiali: scelta rapida</h2>
+<table><tr><th>Prodotto</th><th>Materiale consigliato</th><th>Perché</th></tr>
+<tr><td>Creme, sieri, bagnoschiuma</td><td>PP bianco o trasparente + laminazione</td><td>Resiste ad acqua, oli e sfregamento</td></tr>
+<tr><td>Candele</td><td>PP o carta patinata con laminazione opaca</td><td>Calore e cera. Evita carta naturale non protetta</td></tr>
+<tr><td>Saponi, cosmetici "naturali"</td><td>Carta naturale / kraft con vernice</td><td>Tatto e percezione artigianale. Non adatta a vasetti da doccia</td></tr>
+<tr><td>Integratori (barattolo)</td><td>PP bianco lucido</td><td>Pulito, farmaceutico, buona resa dei testi piccoli</td></tr>
+<tr><td>Bustine / doypack</td><td>Stampa diretta o etichetta PP</td><td>Verifica adesione sulla superficie della bustina</td></tr></table>
+
+<p class="foot">Label Kit — uso commerciale consentito per i propri prodotti. Vietata la rivendita dei template. Le indicazioni normative sono un orientamento: la conformità dell'etichetta è responsabilità del produttore / responsabile dell'immissione sul mercato.</p>
+</body></html>

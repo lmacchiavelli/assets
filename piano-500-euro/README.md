@@ -1,5 +1,17 @@
 # Piano: 500 € in 30 giorni
 
+> **Aggiornamento (decisioni prese):** strada scelta = **prodotto digitale**, nessuna email dal tuo Gmail.
+> Il Label Kit è **già costruito e pronto da caricare**: `label-kit/label-kit.zip` (37 file, 4,5 MB).
+> Immagini listing in `label-kit/listing/`, mockup in `label-kit/mockup/`, scheda in `prodotto-digitale.md`, post in `social-post.md`.
+>
+> **Le uniche 3 cose che devi fare tu (circa 40 minuti totali):**
+> 1. Apri un account Gumroad (gumroad.com, gratuito) e collega conto/PayPal. Carica `label-kit.zip`, incolla titolo e descrizione da `prodotto-digitale.md`, prezzo 29 €, carica le 3 immagini di `listing/` + 5 mockup.
+> 2. Incollami il link Gumroad: lo metto nella landing (sostituisce `GUMROAD_URL`) e la pubblico.
+> 3. Pubblica i post di `social-post.md` (1 ogni 3 giorni) e, se vuoi il canale con più traffico organico, apri anche Etsy (0,20 $ per listing).
+>
+> Target realistico con solo organico: 5–10 vendite nel mese = 145–290 €. Per arrivare a 500 € servono Etsy + i post costanti, oppure il servizio etichette in parallelo (materiale pronto in `offerta.md` e `outreach/`).
+
+
 **Decisione:** vendere un servizio produttizzato di **etichette per piccoli brand cosmetici / integratori / candele / food artigianale**, con prezzo fisso e consegna in 72h. In parallelo, un prodotto digitale (template Illustrator) su Gumroad/Etsy come entrata passiva.
 
 **Perché questo e non altro**

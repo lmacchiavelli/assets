@@ -1,0 +1,12 @@
+@page{size:A4;margin:18mm 16mm}
+body{font:11pt/1.5 -apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;color:#1b1a17;margin:0}
+h1{font-size:24pt;margin:0 0 4pt;letter-spacing:-.02em}h2{font-size:15pt;margin:18pt 0 6pt;color:#1f6f5b;page-break-after:avoid}h3{font-size:12pt;margin:12pt 0 4pt}
+.lead{color:#6b665c;font-size:12pt;margin:0 0 14pt}
+table{border-collapse:collapse;width:100%;font-size:10pt;margin:6pt 0 10pt}th,td{border:1px solid #ddd;padding:5pt 7pt;text-align:left;vertical-align:top}th{background:#f4efe6}
+.box{border:1px solid #1f6f5b;border-left:5px solid #1f6f5b;padding:8pt 11pt;margin:9pt 0;border-radius:3pt;background:#f8fbf9}
+.warn{border-color:#d9a400;background:#fffbe8}
+ul,ol{padding-left:18pt}li{margin:2pt 0}
+.check li{list-style:none;position:relative;padding-left:20pt;margin:4pt 0}.check li::before{content:"";position:absolute;left:0;top:3pt;width:10pt;height:10pt;border:1.3pt solid #1f6f5b;border-radius:2pt}
+.foot{font-size:8.5pt;color:#6b665c;margin-top:16pt;border-top:1px solid #ddd;padding-top:6pt}
+.kbd{font-family:Menlo,monospace;font-size:9.5pt;background:#f0ece4;padding:1pt 4pt;border-radius:2pt}
+.pb{page-break-before:always}

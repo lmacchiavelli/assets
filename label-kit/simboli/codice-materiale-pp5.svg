@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Codice materiale imballaggio (D.Lgs. 116/2020 / Dec. 97/129/CE). Esempi: PP 5, PET 1, HDPE 2, GL 70 vetro, PAP 21 carta, ALU 41 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="22mm" height="12mm" viewBox="0 0 22 12"><title>Codice materiale imballaggio (D.Lgs. 116/2020 / Dec. 97/129/CE). Esempi: PP 5, PET 1, HDPE 2, GL 70 vetro, PAP 21 carta, ALU 41</title>
+<rect x="0.3" y="0.3" width="21.4" height="11.4" rx="1" fill="none" stroke="#000" stroke-width="0.35"/>
+<g transform="translate(5.5,6) scale(0.8)"><path id="b" d="M0 -5.2 l2.6 4.5 h-1.4 l0.7 1.2 h-3.8 l0.7 -1.2 h-1.4 Z" fill="#000"/><use href="#b" transform="rotate(120)"/><use href="#b" transform="rotate(240)"/></g>
+<text x="15.5" y="5.2" text-anchor="middle" font-family="Helvetica, Arial" font-weight="700" font-size="3.4" fill="#000">PP 5</text>
+<text x="15.5" y="9.2" text-anchor="middle" font-family="Helvetica, Arial" font-size="2" fill="#000">PLASTICA</text>
+</svg>
