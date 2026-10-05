@@ -10,7 +10,7 @@ Per chi fa cosmetici, candele, saponi, integratori artigianali. Link in bio.
 #etichette #packagingdesign #cosmeticinaturali #candeleartigianali #saponeartigianale #illustrator #labeldesign #piccoliBrand
 
 ## Post 1b — Beneficenza (immagine: 01-hero.png, da pubblicare 2 giorni dopo il lancio)
-Una cosa che non ho detto nel post di lancio: i primi 250 € che il Label Kit incassa vanno interamente ad AIIMF, l'Associazione Italiana Insegnanti Metodo Feldenkrais. È il mondo da cui vengo e che voglio sostenere.
+Una cosa che non ho detto nel post di lancio: i primi 250 € che il Label Kit incassa vanno interamente in beneficenza a Fondazione Banco Alimentare. È il mondo da cui vengo e che voglio sostenere.
 Non è marketing, è il motivo per cui l'ho messo in vendita invece di tenerlo nel cassetto.
 Quando arriviamo a 250, pubblico la ricevuta. Link in bio.
 #beneficenza #piccoliBrand #etichette
@@ -40,5 +40,5 @@ Titolo: "Template etichetta [contenitore] Illustrator pronta stampa"
 Descrizione: "Template SVG con abbondanze e simboli obbligatori per [tipo prodotto] artigianali. Scarica il kit completo di 12 formati." + link Gumroad.
 
 ## Post 5 — Obiettivo raggiunto (quando succede; immagine: screenshot ricevuta donazione, dati sensibili oscurati)
-Fatto. 250 € donati ad AIIMF, Associazione Italiana Insegnanti Metodo Feldenkrais, grazie a chi ha comprato il Label Kit. Grazie, davvero.
+Fatto. 250 € donati a Fondazione Banco Alimentare grazie a chi ha comprato il Label Kit. Grazie, davvero.
 Da qui in poi il kit continua a esistere e a migliorare: prossimo aggiornamento gratuito in arrivo.
