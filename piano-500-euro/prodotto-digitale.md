@@ -28,7 +28,7 @@ Incluso:
 ✔ 3 mockup per foto prodotto
 ✔ Aggiornamenti gratuiti
 
-💚 I primi 250 € di vendite di questo kit vanno interamente in beneficenza a Fondazione Banco Alimentare. Pubblicherò la ricevuta della donazione sulla pagina del prodotto.
+💚 I primi 250 € di vendite di questo kit vanno interamente ad AIIMF, l'Associazione Italiana Insegnanti Metodo Feldenkrais, per sostenere la diffusione del Metodo in Italia. Pubblicherò la ricevuta della donazione sulla pagina del prodotto.
 
 Richiede Adobe Illustrator CC 2020+. Licenza: uso commerciale illimitato per i tuoi prodotti, non rivendibile.
 
