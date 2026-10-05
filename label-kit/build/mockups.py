@@ -3,10 +3,12 @@
 import os, re, html
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T = os.path.join(ROOT, "templates"); H = os.path.join(ROOT, "build", "html")
-svgs = sorted(f for f in os.listdir(T) if f.endswith(".svg"))
+STYLES = ["minimal", "botanico", "clinico"]
+svgs = sorted(f for f in os.listdir(os.path.join(T, "minimal")) if f.endswith(".svg"))
+FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&family=Josefin+Sans:wght@400;600&display=swap">'
 
-def load(name):
-    s = open(os.path.join(T, name)).read()
+def load(name, st="minimal"):
+    s = open(os.path.join(T, st, name)).read()
     s = s.split("<svg", 1)[1]; s = "<svg" + s
     # nascondi livelli guida come farebbe il designer
     for lid in ("AREA_SICURA", "ABBONDANZA", "CROCINI", "NOTE", "FUSTELLA"):
@@ -52,7 +54,7 @@ def scene(kind, svg, caption, labelbox):
      "pouch": f'<div class="pouch"><div class="body"></div><div class="zip"></div><div class="label" style="{labelbox}">{svg}</div></div>',
      "soap": f'<div class="soap"><div class="bar"></div><div class="label" style="{labelbox}">{svg}</div></div>',
     }[kind]
-    return f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="scene"><div class="shadow"></div>{inner}<div class="caption">{html.escape(caption)}</div></div></body></html>'
+    return f'<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>{CSS}</style></head><body><div class="scene"><div class="shadow"></div>{inner}<div class="caption">{html.escape(caption)}</div></div></body></html>'
 
 # (template file, tipo contenitore, posizione etichetta)
 SCENES = [
@@ -66,15 +68,17 @@ SCENES = [
  ("10-barattolo-capsule-avvolgente.svg", "jar", "left:0;top:110px;width:360px;height:300px", "Barattolo capsule"),
  ("11-sapone-fascetta.svg", "soap", "left:0;top:70px;width:360px;height:90px", "Sapone · fascetta"),
 ]
+STYLE_FOR = {"01":"minimal","02":"botanico","03":"clinico","05":"minimal","06":"clinico","07":"botanico","09":"clinico","10":"minimal","11":"botanico"}
 for f, kind, box, cap in SCENES:
-    open(os.path.join(H, "mockup-" + f.replace(".svg", ".html")), "w").write(scene(kind, load(f), cap, box))
+    st = STYLE_FOR[f[:2]]
+    open(os.path.join(H, "mockup-" + f.replace(".svg", ".html")), "w").write(scene(kind, load(f, st), cap + " · stile " + st, box))
 
 # HERO: griglia dei 12 template
 cards = ""
 for f in svgs:
     name = f[3:-4].replace("-", " ")
     cards += f'<div class="card"><div class="thumb">{load(f)}</div><div class="n">{html.escape(name)}</div></div>'
-hero = f'''<!doctype html><html><head><meta charset="utf-8"><style>
+hero = f'''<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>
 body{{margin:0;font-family:-apple-system,Inter,Helvetica,Arial,sans-serif}}
 .hero{{width:2000px;height:1500px;background:#f4efe6;padding:70px 80px;box-sizing:border-box;position:relative}}
 h1{{font-size:58px;margin:0 0 8px;max-width:1380px;letter-spacing:-.02em;color:#1b1a17}}
@@ -84,15 +88,15 @@ p{{font-size:28px;color:#6b665c;margin:0 0 40px}}
 .thumb{{height:200px;display:flex;align-items:center;justify-content:center}}.thumb svg{{max-width:100%;max-height:100%;width:auto;height:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}}
 .n{{font-size:20px;color:#1b1a17;margin-top:10px;text-transform:capitalize}}
 .badge{{position:absolute;right:80px;top:88px;background:#1f6f5b;color:#fff;font-size:26px;font-weight:700;padding:14px 26px;border-radius:999px}}
-</style></head><body><div class="hero"><div class="badge">12 template · SVG per Illustrator</div>
-<h1>Label Kit — Etichette cosmetiche pronte stampa</h1><p>Abbondanze, fustella, area sicura e simboli obbligatori già impostati. Cambi testi e colori, esporti, stampi.</p>
+</style></head><body><div class="hero"><div class="badge">36 template · 3 stili · SVG + PDF</div>
+<h1>Label Kit — Etichette cosmetiche pronte stampa</h1><p>12 formati × 3 stili. Abbondanze, fustella, area sicura e simboli obbligatori già impostati. Cambi testi e colori, esporti, stampi.</p>
 <div class="grid">{cards}</div></div></body></html>'''
 open(os.path.join(H, "hero.html"), "w").write(hero)
 
 # PRIMA / DOPO
 bad = '''<svg viewBox="0 0 66 96" width="100%" height="100%"><rect width="66" height="96" fill="#fff"/><text x="33" y="30" text-anchor="middle" font-family="Comic Sans MS, Chalkboard, cursive" font-size="7" fill="#e91e63">Crema Viso</text><text x="33" y="42" text-anchor="middle" font-family="Arial" font-size="4" fill="#4caf50">100% NATURALE!!!</text><text x="33" y="60" text-anchor="middle" font-family="Arial" font-size="3" fill="#2196f3">aloe • argan • karitè</text><text x="33" y="85" text-anchor="middle" font-family="Arial" font-size="2.2" fill="#000">ingredienti: acqua, olio...</text><rect x="4" y="68" width="58" height="8" fill="#ffeb3b"/><text x="33" y="73.5" text-anchor="middle" font-family="Arial" font-size="3" fill="#000">OFFERTA</text></svg>'''
 good = load("03-flacone-100ml-fronte.svg")
-ba = f'''<!doctype html><html><head><meta charset="utf-8"><style>{CSS}
+ba = f'''<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>{CSS}
 .scene{{width:2000px;height:1500px;background:#f4efe6}}
 .col{{position:absolute;top:0;bottom:0;width:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}}
 .t{{font-size:54px;font-weight:800;color:#1b1a17}}.t small{{display:block;font-size:26px;font-weight:400;color:#6b665c}}
@@ -105,7 +109,7 @@ ba = f'''<!doctype html><html><head><meta charset="utf-8"><style>{CSS}
 open(os.path.join(H, "prima-dopo.html"), "w").write(ba)
 
 # LIVELLI: screenshot "cosa c'è dentro"
-lay = f'''<!doctype html><html><head><meta charset="utf-8"><style>
+lay = f'''<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>
 body{{margin:0;font-family:-apple-system,Inter,Helvetica,Arial,sans-serif}}
 .s{{width:2000px;height:1500px;background:#2b2b2b;position:relative;color:#eee}}
 .canvas{{position:absolute;left:80px;top:120px;width:1240px;height:1260px;background:#3c3c3c;display:flex;align-items:center;justify-content:center}}
@@ -130,3 +134,17 @@ h1{{position:absolute;left:80px;top:40px;margin:0;font-size:44px;font-weight:700
 </div></div></body></html>'''
 open(os.path.join(H, "livelli.html"), "w").write(lay)
 print("html:", sorted(os.listdir(H)))
+
+# TRE STILI: stesso formato, tre look
+tre = ""
+for st, lab in [("minimal","Minimal"),("botanico","Botanico"),("clinico","Clinico")]:
+    tre += f'<div class="card"><div class="thumb" style="height:520px">{load("05-flacone-250ml-avvolgente.svg", st)}</div><div class="n" style="font-size:30px;text-align:center">{lab}</div></div>'
+stili = f'''<!doctype html><html><head><meta charset="utf-8">{FONTS}<style>
+body{{margin:0;font-family:Inter,-apple-system,Helvetica,Arial,sans-serif}}
+.hero{{width:2000px;height:1500px;background:#f4efe6;padding:70px 80px;box-sizing:border-box}}
+h1{{font-size:58px;margin:0 0 8px;letter-spacing:-.02em;color:#1b1a17}}p{{font-size:28px;color:#6b665c;margin:0 0 40px}}
+.grid{{display:grid;grid-template-columns:1fr;gap:26px}}
+.card{{background:#fff;border-radius:18px;padding:18px 24px;box-shadow:0 8px 24px rgba(0,0,0,.08);display:grid;grid-template-columns:1fr 220px;align-items:center}}
+.thumb svg{{max-width:100%;max-height:100%;width:auto;height:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}}.thumb{{display:flex;align-items:center;justify-content:center;height:330px!important}}
+</style></head><body><div class="hero"><h1>Tre stili, ogni formato</h1><p>Minimal · Botanico (kraft) · Clinico (farmacia). Scegli il look del tuo brand e parti da lì.</p><div class="grid">{tre}</div></div></body></html>'''
+open(os.path.join(H, "stili.html"), "w").write(stili)

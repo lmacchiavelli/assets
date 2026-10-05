@@ -1,4 +1,4 @@
-# Prodotto digitale: "Label Kit — 12 template etichette cosmetiche per Illustrator"
+# Prodotto digitale: "Label Kit — 36 template etichette cosmetiche per Illustrator (12 formati × 3 stili)"
 
 **Piattaforma:** Gumroad (0 costi fissi, 10 % fee) + Etsy (0,20 $ a listing, ottimo per il traffico organico).
 **Prezzo:** 29 € Gumroad / 24 € Etsy (Etsy sconta spesso, parti più alto: 34 € con 30 % off).
@@ -13,15 +13,17 @@
 6. 3 mockup PSD/PNG per le foto prodotto
 
 ## Titolo listing
-**Template Etichette Cosmetiche Illustrator | 12 formati pronti stampa + guida tipografia + checklist norma UE**
+**Template Etichette Cosmetiche Illustrator | 36 template, 12 formati × 3 stili, SVG + PDF, pronti stampa + guida tipografia + checklist norma UE**
 
 ## Descrizione (Gumroad)
 Fai cosmetici artigianali e ogni volta rifai l'etichetta da zero su Canva, poi la tipografia ti rimanda il file?
 
-Questo kit è il sistema che uso io per i clienti: 12 template Illustrator già impostati con fustella, abbondanze, livelli ordinati e tutti i testi obbligatori (INCI, PAO, e-mark, simboli) già posizionati. Cambi logo, colori e nomi: esporti e mandi in stampa.
+Questo kit è il sistema che uso io per i clienti: 36 template già impostati con fustella, abbondanze, livelli ordinati e tutti i testi obbligatori (INCI, PAO, e-mark, simboli) già posizionati. 12 formati (vasetti, flaconi, tubetti, candele, bustine, barattoli, saponi) in 3 stili: Minimal, Botanico kraft, Clinico farmacia. Cambi logo, colori e nomi: esporti e mandi in stampa.
 
 Incluso:
-✔ 12 template AI (vasetti, flaconi, tubetti, candele, bustine, barattoli)
+✔ 36 template SVG + 36 PDF vettoriali (Illustrator, Affinity, Inkscape, Figma)
+✔ 4 font professionali inclusi con licenza (Inter, Cormorant Garamond, Playfair Display, Josefin Sans)
+✔ Guida esportazione e checklist anche in INGLESE
 ✔ Simboli vettoriali obbligatori UE
 ✔ Guida esportazione per tipografia (PDF)
 ✔ Checklist conformità etichetta cosmetica
@@ -30,7 +32,7 @@ Incluso:
 
 💚 I primi 250 € di vendite di questo kit vanno interamente in beneficenza a Fondazione Banco Alimentare. Pubblicherò la ricevuta della donazione sulla pagina del prodotto.
 
-Richiede Adobe Illustrator CC 2020+. Licenza: uso commerciale illimitato per i tuoi prodotti, non rivendibile.
+Compatibile con Adobe Illustrator CC 2020+, Affinity Designer, Inkscape (gratis), Figma. Licenza: uso commerciale illimitato per i tuoi prodotti, non rivendibile.
 
 ## Tag Etsy (13)
 etichetta cosmetica, template illustrator, label template, etichette candele, packaging artigianale, skincare label, etichetta sapone, template etichetta, cosmetic label, stampa etichette, etichetta integratore, design etichetta, label design

@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Print export guide</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Guide: from template to a file your printer accepts first time</h1>
+<p class="lead">Label Kit · 36 label templates (12 formats × 3 styles) · Illustrator CC 2020+ (also Affinity Designer, Inkscape, Figma)</p>
+<h2>1. Open the template</h2>
+<ol><li>Open the <span class="kbd">.svg</span> (or the <span class="kbd">.pdf</span> in <span class="kbd">templates-pdf/</span>) with <strong>File › Open</strong>, not Place. Illustrator turns the top-level groups into layers.</li>
+<li>If you see a single layer, select the group in the Layers panel and use <strong>Release to Layers (Sequence)</strong>. Or just work inside the groups: they are already named.</li>
+<li>Check <strong>File › Document Setup</strong>: units in millimetres, colour mode <strong>CMYK</strong>.</li></ol>
+<div class="box">Every template is trim size + 3 mm bleed on each side. The artboard is already the right size: <strong>do not resize it</strong>.</div>
+<h2>2. Layers</h2>
+<table><tr><th>Layer</th><th>Colour</th><th>Contents</th><th>Print?</th></tr>
+<tr><td>GRAFICA</td><td>—</td><td>Background, pattern, illustrations, logo. Anything coloured must run to the outer magenta line.</td><td>Yes</td></tr>
+<tr><td>TESTI</td><td>—</td><td>Name, claim, INCI, warnings, net content. Keep inside the green line.</td><td>Yes</td></tr>
+<tr><td>SIMBOLI</td><td>—</td><td>Placeholders for PAO, ℮, recycling. Paste the files from <span class="kbd">simboli/</span>.</td><td>Yes</td></tr>
+<tr><td>AREA_SICURA</td><td>green dashed</td><td>3 mm safe area from the cut.</td><td>No: hide</td></tr>
+<tr><td>FUSTELLA</td><td>cyan</td><td>Cut line. Some printers want it as a spot colour "CutContour" set to overprint, others want it removed. <strong>Ask.</strong></td><td>Depends</td></tr>
+<tr><td>ABBONDANZA</td><td>magenta dashed</td><td>3 mm bleed boundary. Reference only.</td><td>No: hide</td></tr>
+<tr><td>CROCINI</td><td>black</td><td>Crop marks. If you export with Illustrator's "Trim Marks", hide these.</td><td>One of the two</td></tr>
+<tr><td>NOTE</td><td>grey</td><td>Reminders for you.</td><td>No: hide</td></tr></table>
+<h2>3. The 7 rules that stop your printer sending the file back</h2>
+<ol><li><strong>3 mm bleed.</strong> Backgrounds must reach the magenta line. A thin white edge after cutting is the most common defect.</li>
+<li><strong>3 mm safe area.</strong> Text and logos inside the green line. Die-cutting can shift by 1 mm.</li>
+<li><strong>CMYK, not RGB.</strong> Bright RGB greens and oranges go dull in CMYK. Work in CMYK from the start.</li>
+<li><strong>Rich black only for solid areas</strong> (C60 M40 Y40 K100). Text in pure K100. Never small text in rich black.</li>
+<li><strong>Small text: minimum 1.2 mm x-height</strong> (about 5–6 pt). Mandatory for food and supplements (Reg. 1169/2011); best practice for cosmetics.</li>
+<li><strong>Outline fonts</strong> only in the copy you send to print (Type › Create Outlines). Keep a live-text master.</li>
+<li><strong>Images at 300 dpi</strong> at final size, embedded. No 72 dpi PNGs from Instagram.</li></ol>
+<h2>4. Export the PDF</h2>
+<ol><li>Hide AREA_SICURA, ABBONDANZA, NOTE. Decide FUSTELLA and CROCINI (table above).</li>
+<li><strong>File › Save As › Adobe PDF</strong>, preset <strong>[PDF/X-4:2008]</strong> (PDF/X-1a if the printer insists).</li>
+<li><strong>Marks and Bleeds</strong>: bleed <strong>3 mm</strong> on all sides. Trim marks on if you hid the CROCINI layer.</li>
+<li><strong>Output</strong>: "Convert to Destination (Preserve Numbers)", profile <strong>Coated FOGRA39</strong> for coated paper or PP; <strong>Uncoated FOGRA29</strong> for natural paper. In the US use <strong>U.S. Web Coated (SWOP)</strong> or <strong>GRACoL</strong> as your printer specifies.</li>
+<li>Name it <span class="kbd">brand_product_format_PRINT.pdf</span>. Open the PDF and check edges and small text at 400 %.</li></ol>
+<div class="box warn"><strong>Spot colours and white ink.</strong> Clear or metallic labels need a white underprint layer (spot "White", overprint). Hot-foil gold or silver needs a spot "Foil". Ask the printer how they want them named before you set them up.</div>
+<h2>5. What to send the printer</h2>
+<ul class="check"><li>PDF/X with bleed</li><li>Quantity, material (white PP, natural paper, clear PP…), finish (matte, gloss, soft touch)</li><li>Trim size in mm and shape (rectangle with 2 mm radius, Ø 60 round, …)</li><li>For wrap labels: container diameter and wrap direction</li><li>Rolls or sheets? For rolls: core diameter and unwind orientation</li><li>Always ask for a <strong>proof</strong> before the full run</li></ul>
+<h2>6. Material quick pick</h2>
+<table><tr><th>Product</th><th>Material</th><th>Why</th></tr>
+<tr><td>Creams, serums, shower gels</td><td>White or clear PP + lamination</td><td>Water, oil and rub resistant</td></tr>
+<tr><td>Candles</td><td>PP or coated paper, matte lamination</td><td>Heat and wax. Avoid unprotected natural paper</td></tr>
+<tr><td>Soaps, "natural" cosmetics</td><td>Natural / kraft paper with varnish</td><td>Touch and artisan feel. Not for shower products</td></tr>
+<tr><td>Supplements (jar)</td><td>Gloss white PP</td><td>Clean, pharma look, crisp small text</td></tr>
+<tr><td>Pouches</td><td>Direct print or PP label</td><td>Check adhesion on the pouch surface</td></tr></table>
+<p class="foot">Label Kit — commercial use allowed for your own products or your clients'. Reselling the templates is not allowed. Regulatory notes are guidance; compliance remains the responsibility of the producer / responsible person.</p>
+</body></html>

@@ -1,0 +1,17 @@
+FONT USATI NEI TEMPLATE (tutti gratuiti, licenza SIL Open Font, uso commerciale consentito)
+
+I 4 font sono INCLUSI nella cartella fonts/ (file .ttf variabili + licenza OFL). Doppio click per installarli.
+
+Stile MINIMAL   : Cormorant Garamond (titoli) + Inter (testi)
+Stile BOTANICO  : Playfair Display (titoli) + Josefin Sans (testi)
+Stile CLINICO   : Inter (tutto)
+
+Download (Google Fonts):
+  https://fonts.google.com/specimen/Cormorant+Garamond
+  https://fonts.google.com/specimen/Inter
+  https://fonts.google.com/specimen/Playfair+Display
+  https://fonts.google.com/specimen/Josefin+Sans
+
+Installa i font PRIMA di aprire i template, altrimenti Illustrator sostituisce con un font di sistema
+(il file resta corretto: basta installare e riaprire). Se preferisci un font tuo, cambialo nel
+livello TESTI e aggiorna la nota in fondo alla guida.

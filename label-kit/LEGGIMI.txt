@@ -1,16 +1,27 @@
-LABEL KIT — 12 template etichette cosmetiche pronte stampa
-===========================================================
+LABEL KIT — 36 template etichette cosmetiche pronte stampa (12 formati × 3 stili)
+=================================================================================
 
 CONTENUTO
-  templates/   12 template SVG in millimetri reali, con livelli: GRAFICA, TESTI, SIMBOLI,
-               AREA_SICURA, FUSTELLA, ABBONDANZA, CROCINI, NOTE.
+  templates/   36 template SVG (cartelle minimal/, botanico/, clinico/) in millimetri reali,
+               con livelli: GRAFICA, TESTI, SIMBOLI, AREA_SICURA, FUSTELLA, ABBONDANZA, CROCINI, NOTE.
+  templates-pdf/  Gli stessi 36 template come PDF vettoriali (si aprono in Illustrator, Affinity,
+               Inkscape, Acrobat). L'SVG resta il file master: il PDF può differire di <0,5 mm.
+  fonts/       I 4 font usati (Inter, Cormorant Garamond, Playfair Display, Josefin Sans),
+               licenza OFL inclusa. Installali prima di aprire i template.
   simboli/     10 simboli vettoriali: PAO, clessidra, e-mark, Möbius, mano-libro,
                3 pittogrammi candela EN 15494, codice materiale, frase raccolta.
   mockup/      9 mockup PNG 1200×900 per foto prodotto / social.
   guida-esportazione-tipografia.pdf   Come esportare un PDF che la tipografia accetta.
   checklist-conformita-etichetta.pdf  Cosa deve esserci per legge (cosmetici, integratori, candele).
+  print-export-guide-EN.pdf / label-compliance-checklist-EN.pdf   Le stesse due guide in inglese.
+
+STILI
+  minimal  = cornice sottile, fondo avorio, serif elegante (skincare, sieri, oli)
+  botanico = fondo kraft, fregio vegetale, bordi verdi (saponi, candele, cosmesi naturale)
+  clinico  = fondo bianco, banda colore, griglia (integratori, farmacia, dermocosmesi)
 
 COME SI USA (3 passi)
+  0. Installa i font da fonts/ (doppio click su ogni .ttf).
   1. Illustrator: File › Apri › scegli il template. Unità mm, colore CMYK.
   2. Sostituisci testi e colori nei livelli GRAFICA e TESTI. Incolla i simboli dalla cartella simboli/.
   3. Nascondi AREA_SICURA, ABBONDANZA, NOTE. Salva come PDF/X-4 con 3 mm di abbondanza. Stampa.

@@ -6,6 +6,11 @@ T = os.path.join(ROOT, "templates"); S = os.path.join(ROOT, "simboli"); H = os.p
 for d in (T, S, H): os.makedirs(d, exist_ok=True)
 
 BLEED = 3.0; SAFE = 3.0
+STYLES = {
+ "minimal":  dict(bg="#f4efe6", ink="#1b1a17", accent="#1f6f5b", muted="#6b665c", serif="'Cormorant Garamond', Georgia, serif", sans="'Inter', Helvetica, Arial, sans-serif"),
+ "botanico": dict(bg="#d9c7a7", ink="#2e2418", accent="#5a6b3b", muted="#6e5f4a", serif="'Playfair Display', Georgia, serif", sans="'Josefin Sans', Helvetica, Arial, sans-serif"),
+ "clinico":  dict(bg="#ffffff", ink="#10213a", accent="#2a6fdb", muted="#5c6b80", serif="'Inter', Helvetica, Arial, sans-serif", sans="'Inter', Helvetica, Arial, sans-serif"),
+}
 # (file, titolo, tipo, w, h, uso) — w,h = misura etichetta finita in mm. tipo: rect | round | wrap | tube
 TEMPLATES = [
  ("01-vasetto-50ml-coperchio", "Vasetto 50 ml — coperchio", "round", 60, 60, "Crema viso, balsamo, scrub"),
@@ -72,40 +77,65 @@ def crop_marks(W, H_):
         m.append(f'<line x1="{mm(x)}" y1="{mm(y+dy*o)}" x2="{mm(x)}" y2="{mm(y+dy*(o+L))}" stroke="#000" stroke-width="0.1"/>')
     return f'<g id="CROCINI" data-name="CROCINI DI TAGLIO">{"".join(m)}</g>'
 
-def content_layers(tipo, w, h, titolo):
+def content_layers(tipo, w, h, titolo, st):
+    c = STYLES[st]
     W, H_ = frame(w, h)
     cx, cy = W/2, H_/2
     small = h < 40 or w < 55
     g = []
     g.append('<g id="GRAFICA" data-name="GRAFICA - sfondo, pattern, illustrazioni">')
     if tipo == "round":
-        g.append(f'<circle cx="{mm(cx)}" cy="{mm(cy)}" r="{mm(w/2+BLEED)}" fill="#f4efe6"/>')
-        g.append(f'<circle cx="{mm(cx)}" cy="{mm(cy)}" r="{mm(w/2-SAFE-1)}" fill="none" stroke="#1f6f5b" stroke-width="0.4"/>')
+        g.append(f'<circle cx="{mm(cx)}" cy="{mm(cy)}" r="{mm(w/2+BLEED)}" fill="{c["bg"]}"/>')
     else:
-        g.append(f'<rect x="0" y="0" width="{mm(W)}" height="{mm(H_)}" fill="#f4efe6"/>')
-        g.append(f'<rect x="{mm(BLEED+SAFE)}" y="{mm(BLEED+SAFE)}" width="{mm(w-2*SAFE)}" height="{mm(h-2*SAFE)}" fill="none" stroke="#1f6f5b" stroke-width="0.4" rx="1"/>')
+        g.append(f'<rect x="0" y="0" width="{mm(W)}" height="{mm(H_)}" fill="{c["bg"]}"/>')
+    if st == "minimal":
+        if tipo == "round":
+            g.append(f'<circle cx="{mm(cx)}" cy="{mm(cy)}" r="{mm(w/2-SAFE-1)}" fill="none" stroke="{c["accent"]}" stroke-width="0.4"/>')
+        else:
+            g.append(f'<rect x="{mm(BLEED+SAFE)}" y="{mm(BLEED+SAFE)}" width="{mm(w-2*SAFE)}" height="{mm(h-2*SAFE)}" fill="none" stroke="{c["accent"]}" stroke-width="0.4" rx="1"/>')
+    elif st == "botanico":
+        # rametto stilizzato in alto e in basso + texture puntinata
+        leaf = lambda x, y, sc, rot: f'<g transform="translate({mm(x)},{mm(y)}) scale({sc}) rotate({rot})" fill="{c["accent"]}" fill-opacity="0.85"><path d="M0 0 C-3 -4 -3 -9 0 -12 C3 -9 3 -4 0 0Z"/><path d="M0 0 L0 -12" stroke="{c["bg"]}" stroke-width="0.4"/><path d="M-6 -3 C-4 -7 -2 -8 0 -8 C-1 -5 -3 -3 -6 -3Z"/><path d="M6 -3 C4 -7 2 -8 0 -8 C1 -5 3 -3 6 -3Z"/></g>'
+        fx0 = cx if tipo != "wrap" else BLEED + w/4
+        top = BLEED + SAFE + (4 if h > 40 else 1.5)
+        if h > 40: g.append(leaf(fx0, top + 5, 0.45, 0))
+        g.append(f'<rect x="{mm(BLEED)}" y="{mm(BLEED+h-SAFE-0.8)}" width="{mm(w)}" height="0.8" fill="{c["accent"]}" fill-opacity="0.9"/>')
+        g.append(f'<rect x="{mm(BLEED)}" y="{mm(BLEED)}" width="{mm(w)}" height="0.8" fill="{c["accent"]}" fill-opacity="0.9"/>')
+    elif st == "clinico":
+        band_h = min(10, h*0.22)
+        if tipo == "round":
+            g.append(f'<path d="M{mm(cx-w/2-BLEED)} {mm(cy)} A{mm(w/2+BLEED)} {mm(w/2+BLEED)} 0 0 0 {mm(cx+w/2+BLEED)} {mm(cy)} Z" fill="{c["accent"]}" fill-opacity="0.08"/>')
+            g.append(f'<rect x="{mm(cx-w/2)}" y="{mm(cy-0.3)}" width="{mm(w)}" height="0.6" fill="{c["accent"]}"/>')
+        else:
+            g.append(f'<rect x="0" y="0" width="{mm(W)}" height="{mm(BLEED+band_h)}" fill="{c["accent"]}"/>')
+            g.append(f'<rect x="0" y="{mm(BLEED+band_h)}" width="{mm(W)}" height="0.5" fill="{c["ink"]}" fill-opacity="0.15"/>')
+            for i in range(1, 6):
+                yy = BLEED + band_h + (h - band_h) * i / 6
+                g.append(f'<rect x="{mm(BLEED+SAFE)}" y="{mm(yy)}" width="{mm(w-2*SAFE)}" height="0.15" fill="{c["accent"]}" fill-opacity="0.12"/>')
     g.append('</g>')
     g.append('<g id="TESTI" data-name="TESTI - nome, claim, INCI, avvertenze">')
     fx = cx if tipo != "wrap" else BLEED + w/4
     fs_brand = 2.4 if small else 3.2
     fs_name = 4.5 if small else 7
     fs_sub = 2 if small else 2.6
-    g.append(f'<text x="{mm(fx)}" y="{mm(cy - (h*0.18))}" text-anchor="middle" font-family="Helvetica, Arial" font-size="{fs_brand}" letter-spacing="0.6" fill="#1f6f5b">NOME BRAND</text>')
-    g.append(f'<text x="{mm(fx)}" y="{mm(cy + 1.5)}" text-anchor="middle" font-family="Georgia, serif" font-size="{fs_name}" fill="#1b1a17">Nome Prodotto</text>')
-    g.append(f'<text x="{mm(fx)}" y="{mm(cy + (h*0.16))}" text-anchor="middle" font-family="Helvetica, Arial" font-size="{fs_sub}" fill="#6b665c">claim breve · funzione</text>')
-    g.append(f'<text x="{mm(fx)}" y="{mm(BLEED + h - SAFE - 1.5)}" text-anchor="middle" font-family="Helvetica, Arial" font-size="{fs_sub}" fill="#1b1a17">50 ml ℮</text>')
+    brand_col = "#ffffff" if (st == "clinico" and tipo != "round") else c["accent"]
+    brand_y = (BLEED + min(10, h*0.22)/2 + fs_brand/2.8) if (st == "clinico" and tipo != "round") else cy - (h*0.18)
+    g.append(f'<text x="{mm(fx)}" y="{mm(brand_y)}" text-anchor="middle" font-family="{c["sans"]}" font-weight="600" font-size="{fs_brand}" letter-spacing="0.6" fill="{brand_col}">NOME BRAND</text>')
+    g.append(f'<text x="{mm(fx)}" y="{mm(cy + 1.5)}" text-anchor="middle" font-family="{c["serif"]}" font-weight="{"700" if st=="clinico" else "500"}" font-size="{fs_name}" fill="{c["ink"]}">Nome Prodotto</text>')
+    g.append(f'<text x="{mm(fx)}" y="{mm(cy + (h*0.16))}" text-anchor="middle" font-family="{c["sans"]}" font-size="{fs_sub}" fill="{c["muted"]}">claim breve · funzione</text>')
+    g.append(f'<text x="{mm(fx)}" y="{mm(BLEED + h - SAFE - 1.5)}" text-anchor="middle" font-family="{c["sans"]}" font-size="{fs_sub}" fill="{c["ink"]}">50 ml ℮</text>')
     if tipo == "wrap":
-        bx = BLEED + w/2 + SAFE + 2; by = BLEED + SAFE + 5; bw = w/2 - 5 - 2*SAFE - 2
+        bx = BLEED + w/2 + SAFE + 2; by = BLEED + SAFE + (12 if st=="clinico" else 5); bw = w/2 - 5 - 2*SAFE - 2
         lines = ["INGREDIENTI / INCI: Aqua, Glycerin, ... (min. 1,2 mm x-height consigliata)",
                  "MODO D'USO: ...", "AVVERTENZE: ...",
                  "Responsabile immissione sul mercato: Nome, Indirizzo, Città (IT)",
                  "Lotto: vedi fondo · Made in Italy"]
         y = by
         for ln in lines:
-            g.append(f'<text x="{mm(bx)}" y="{mm(y)}" font-family="Helvetica, Arial" font-size="1.8" fill="#1b1a17" xml:space="preserve">{ln}</text>')
+            g.append(f'<text x="{mm(bx)}" y="{mm(y)}" font-family="{c["sans"]}" font-size="1.8" fill="{c["ink"]}" xml:space="preserve">{ln}</text>')
             y += 3.2
         g.append(f'<rect x="{mm(bx)}" y="{mm(y)}" width="{mm(bw)}" height="{mm(max(4, BLEED+h-SAFE-y-10))}" fill="none" stroke="#9e9e9e" stroke-width="0.1" stroke-dasharray="0.5 0.5"/>')
-        g.append(f'<text x="{mm(bx+1)}" y="{mm(y+2.5)}" font-family="Helvetica, Arial" font-size="1.5" fill="#9e9e9e">area testi aggiuntivi / codice a barre</text>')
+        g.append(f'<text x="{mm(bx+1)}" y="{mm(y+2.5)}" font-family="{c["sans"]}" font-size="1.5" fill="#9e9e9e">area testi aggiuntivi / codice a barre</text>')
     g.append('</g>')
     # simboli: usa i file in /simboli; qui solo segnaposto
     g.append('<g id="SIMBOLI" data-name="SIMBOLI OBBLIGATORI - incolla da cartella simboli">')
@@ -118,15 +148,16 @@ def content_layers(tipo, w, h, titolo):
     g.append('</g>')
     return "\n".join(g)
 
-def svg_template(file, titolo, tipo, w, h, uso):
+def svg_template(file, titolo, tipo, w, h, uso, st="minimal"):
     W, H_ = frame(w, h)
+    os.makedirs(os.path.join(T, st), exist_ok=True)
     body = f'''<?xml version="1.0" encoding="UTF-8"?>
-<!-- Label Kit — {titolo} — misura finita {w} × {h} mm, abbondanza {BLEED} mm per lato, area sicura {SAFE} mm.
+<!-- Label Kit — stile {st.upper()} — {titolo} — misura finita {w} × {h} mm, abbondanza {BLEED} mm per lato, area sicura {SAFE} mm.
      Livelli (gruppi di primo livello): GRAFICA, TESTI, SIMBOLI, AREA_SICURA, FUSTELLA, ABBONDANZA, CROCINI, NOTE.
      Prima di esportare: nascondi AREA_SICURA, ABBONDANZA, NOTE; FUSTELLA su colore spot "CutContour" o nascosta (chiedi alla tipografia). -->
 <svg xmlns="http://www.w3.org/2000/svg" width="{mm(W)}mm" height="{mm(H_)}mm" viewBox="0 0 {mm(W)} {mm(H_)}">
-<title>{titolo}</title>
-{content_layers(tipo, w, h, titolo)}
+<title>{titolo} · {st}</title>
+{content_layers(tipo, w, h, titolo, st)}
 {guide_layer(tipo, w, h)}
 {crop_marks(W, H_)}
 <g id="NOTE" data-name="NOTE PER IL DESIGNER - non stampare">
@@ -134,9 +165,12 @@ def svg_template(file, titolo, tipo, w, h, uso):
 </g>
 </svg>
 '''
-    with open(os.path.join(T, file + ".svg"), "w") as f: f.write(body)
+    with open(os.path.join(T, st, file + ".svg"), "w") as f: f.write(body)
 
-for t in TEMPLATES: svg_template(*t)
+import shutil
+for old in [f for f in os.listdir(T) if f.endswith(".svg")]: os.remove(os.path.join(T, old))
+for st in STYLES:
+    for t in TEMPLATES: svg_template(*t, st=st)
 
 # ---------- SIMBOLI ----------
 def write_sym(name, w, h, inner, desc):
@@ -194,4 +228,4 @@ racc = '''<text x="0" y="3" font-family="Helvetica, Arial" font-size="2.2" fill=
 <text x="0" y="6" font-family="Helvetica, Arial" font-size="2.2" fill="#000">Verifica le disposizioni del tuo Comune.</text>'''
 write_sym("raccolta-differenziata-testo", 50, 8, racc, "Frase di raccolta (etichettatura ambientale Italia)")
 
-print("templates:", len(os.listdir(T)), "simboli:", len(os.listdir(S)))
+print("templates:", sum(len(os.listdir(os.path.join(T,d))) for d in STYLES), "simboli:", len(os.listdir(S)))
