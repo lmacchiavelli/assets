@@ -28,6 +28,8 @@ Incluso:
 ✔ 3 mockup per foto prodotto
 ✔ Aggiornamenti gratuiti
 
+💚 I primi 250 € di vendite di questo kit vanno interamente in beneficenza a [NOME ASSOCIAZIONE]. Pubblicherò la ricevuta della donazione sulla pagina del prodotto.
+
 Richiede Adobe Illustrator CC 2020+. Licenza: uso commerciale illimitato per i tuoi prodotti, non rivendibile.
 
 ## Tag Etsy (13)

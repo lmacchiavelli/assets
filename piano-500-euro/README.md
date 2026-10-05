@@ -9,6 +9,8 @@
 > 2. Incollami il link Gumroad: lo metto nella landing (sostituisce `GUMROAD_URL`) e la pubblico.
 > 3. Pubblica i post di `social-post.md` (1 ogni 3 giorni) e, se vuoi il canale con più traffico organico, apri anche Etsy (0,20 $ per listing).
 >
+> **Beneficenza:** i primi 250 € vanno a [NOME ASSOCIAZIONE] (da decidere: metti il nome nei 3 file dove compare il segnaposto, oppure dimmelo e lo faccio io). Pubblica la ricevuta sulla pagina Gumroad quando arrivi a 250: è la prova sociale più forte che avremo.
+>
 > Target realistico con solo organico: 5–10 vendite nel mese = 145–290 €. Per arrivare a 500 € servono Etsy + i post costanti, oppure il servizio etichette in parallelo (materiale pronto in `offerta.md` e `outreach/`).
 
 
