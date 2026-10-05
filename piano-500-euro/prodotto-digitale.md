@@ -21,6 +21,7 @@ Fai cosmetici artigianali e ogni volta rifai l'etichetta da zero su Canva, poi l
 Questo kit è il sistema che uso io per i clienti: 36 template già impostati con fustella, abbondanze, livelli ordinati e tutti i testi obbligatori (INCI, PAO, e-mark, simboli) già posizionati. 12 formati (vasetti, flaconi, tubetti, candele, bustine, barattoli, saponi) in 3 stili: Minimal, Botanico kraft, Clinico farmacia. Cambi logo, colori e nomi: esporti e mandi in stampa.
 
 Incluso:
+✔ EDITOR nel browser: scrivi brand, prodotto, INCI e quantità una volta, 36 etichette si aggiornano in tempo reale, scarichi SVG o PDF. Senza Illustrator, senza installare nulla.
 ✔ 36 template SVG + 36 PDF vettoriali (Illustrator, Affinity, Inkscape, Figma)
 ✔ 4 font professionali inclusi con licenza (Inter, Cormorant Garamond, Playfair Display, Josefin Sans)
 ✔ Guida esportazione e checklist anche in INGLESE
@@ -38,6 +39,7 @@ Compatibile con Adobe Illustrator CC 2020+, Affinity Designer, Inkscape (gratis)
 etichetta cosmetica, template illustrator, label template, etichette candele, packaging artigianale, skincare label, etichetta sapone, template etichetta, cosmetic label, stampa etichette, etichetta integratore, design etichetta, label design
 
 ## Immagini listing (10)
+0. Editor in azione (05-editor.png): è l'immagine più forte dopo la hero
 1. Hero: griglia dei 12 template in mockup
 2. Un template aperto in Illustrator con livelli visibili
 3. Prima/dopo: etichetta Canva vs template

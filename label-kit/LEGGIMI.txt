@@ -2,6 +2,8 @@ LABEL KIT — 36 template etichette cosmetiche pronte stampa (12 formati × 3 st
 =================================================================================
 
 CONTENUTO
+  editor/      EDITOR: apri editor/index.html nel browser. Scrivi brand, prodotto, INCI, quantità una
+               volta sola e tutte le 36 etichette si aggiornano. Scarica SVG o PDF. Nessuna installazione.
   templates/   36 template SVG (cartelle minimal/, botanico/, clinico/) in millimetri reali,
                con livelli: GRAFICA, TESTI, SIMBOLI, AREA_SICURA, FUSTELLA, ABBONDANZA, CROCINI, NOTE.
   templates-pdf/  Gli stessi 36 template come PDF vettoriali (si aprono in Illustrator, Affinity,
@@ -20,7 +22,10 @@ STILI
   botanico = fondo kraft, fregio vegetale, bordi verdi (saponi, candele, cosmesi naturale)
   clinico  = fondo bianco, banda colore, griglia (integratori, farmacia, dermocosmesi)
 
-COME SI USA (3 passi)
+VIA RAPIDA (senza Illustrator)
+  Apri editor/index.html, compila i campi, scegli lo stile, scarica SVG o PDF. Fine.
+
+VIA PROFESSIONALE (con Illustrator)
   0. Installa i font da fonts/ (doppio click su ogni .ttf).
   1. Illustrator: File › Apri › scegli il template. Unità mm, colore CMYK.
   2. Sostituisci testi e colori nei livelli GRAFICA e TESTI. Incolla i simboli dalla cartella simboli/.
